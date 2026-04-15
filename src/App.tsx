@@ -1,23 +1,15 @@
-import { CalcProvider } from "./context/CalcContext";
-import ResultsSummary from "./components/ResultsSummary";
-import InputPanel from "./components/InputPanel";
-import GrowthSchedule from "./components/GrowthSchedule";
+import {Routes, Route} from "react-router-dom";
+import Home from "./pages/Home.tsx";
+import CompoundInterest from "./pages/CompoundInterest.tsx";
+import LoanCalculator from "./pages/LoanCalculator.tsx";
 import "./App.css";
 
 export default function App(){
   return(
-    <CalcProvider >
-      <div className="app">
-        <div className="header">
-          <div className="logo">Interest<span>Lab</span></div>
-          <div className="tagline">compound interest explorer</div>
-        </div>
-        <div className="grid">
-          <InputPanel/>
-          <ResultsSummary/>
-          <GrowthSchedule/>
-        </div>
-      </div>
-    </CalcProvider>
+    <Routes>
+      <Route path="/" element={<Home/>} />
+      <Route path="/compound" element={<CompoundInterest/>} />
+      <Route path="/loan" element={<LoanCalculator/>} />
+    </Routes>
   )
 }

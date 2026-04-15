@@ -1,0 +1,38 @@
+.home-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.calc-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.calc-card:hover {
+  border-color: var(--accent);
+}
+
+.calc-card-title {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.calc-card-desc {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.calc-card-link {
+  font-size: 12px;
+  color: var(--accent);
+}
