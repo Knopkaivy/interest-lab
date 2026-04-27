@@ -8,11 +8,11 @@
 :root {
   --bg:      #0d0f14;
   --surface: #13161d;
-  --border:  #1f2330;
+  --border:  #3b435c;
   --accent:  #ff0080;
   --accent2: #7c6af7;
   --text:    #e8eaf2;
-  --muted:   #5a6080;
+  --muted:   #a5a9c0;
   --radius:  12px;
   --mono:    'DM Mono', monospace;
   --display: 'Syne', sans-serif;

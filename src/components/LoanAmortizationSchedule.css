@@ -1,0 +1,28 @@
+.amortization{
+    background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  grid-column: 1 / -1;
+}
+
+.table-wrap--loan {
+  overflow-x: auto;
+  max-height: 300px;
+  overflow-y: auto;
+  border-radius: 8px;
+}
+
+.table-wrap--loan::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+.table-wrap--loan::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.table-wrap--loan::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 2px;
+}

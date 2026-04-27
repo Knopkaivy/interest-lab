@@ -1,0 +1,6 @@
+.unit {
+  font-size: 13px;
+  font-family: var(--mono);
+  color: var(--muted);
+  margin-left: 4px;
+}
