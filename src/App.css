@@ -1,33 +1,7 @@
 .app {
   max-width: 960px;
   margin: 0 auto;
-  padding: 40px 24px 80px;
-}
-
-.header {
-  display: flex;
-  align-items: baseline;
-  gap: 12px;
-  margin-bottom: 40px;
-}
-
-.logo {
-  font-family: var(--display);
-  font-weight: 800;
-  font-size: 32px;
-  letter-spacing: -1px;
-  color: var(--text);
-}
-
-.logo span {
-  color: var(--accent);
-}
-
-.tagline {
-  font-size: 11px;
-  color: var(--muted);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  padding: 0 24px;
 }
 
 .grid {
@@ -37,37 +11,11 @@
   gap: 16px;
 }
 
-.back-btn {
-  margin-left: auto;
-  background: transparent;
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  color: var(--muted);
-  font-family: var(--mono);
-  font-size: 11px;
-  padding: 6px 12px;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-.back-btn:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-}
 
 @media (max-width: 650px){
   .app {
     max-width: 100%;
     padding: 20px 12px 20px;
-  }
-
-  .header {
-    flex-direction: column;
-  }
-
-  .back-btn {
-    margin-left: 0 auto;
-    width: 100%;
   }
 
   .grid {

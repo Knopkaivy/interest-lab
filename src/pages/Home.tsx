@@ -4,12 +4,9 @@ import "./Home.css";
 export default function Home(){
   const navigate = useNavigate();
 
+
   return(
     <div className="app">
-        <div className="header">
-            <div className="logo">Interest<span>Lab</span></div>
-            <div className="tagline">financial calculators</div>
-        </div>
         <div className="home-grid">
             <div className="calc-card" onClick={() => navigate("/compound")}>
                 <div className="calc-card-title">Compound Interest</div>
