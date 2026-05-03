@@ -26,3 +26,7 @@
   background: var(--border);
   border-radius: 2px;
 }
+
+.td-balance {
+  color: var(--accent);
+}

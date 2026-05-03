@@ -9,18 +9,6 @@ export default function LoanInputPanel(){
         extraPayment, setExtraPayment,
     } = useLoan();
 
-    const termOptions = [
-        {label: "24 mo", value: 24},
-        {label: "36 mo", value: 36},
-        {label: "48 mo", value: 48},
-        {label: "60 mo", value: 60},
-        {label: "72 mo", value: 72},
-    ]
-    const termOptionsRows = termOptions.map(option => {
-        return <button key={option.value} className={`freq-btn${loanTerm === option.value ? " active" : ""}`} onClick={() => setLoanTerm(option.value)}>{option.label}</button>
-        }
-    )
-
     return (
         <div className="input-panel">
             <div className="card-label">Loan parameters</div>
@@ -43,10 +31,9 @@ export default function LoanInputPanel(){
                 <div className="field">
                     <div className="field-label">
                         <span>Loan term</span>
+                        <span>{loanTerm} mo</span>
                     </div>
-                    <div className="select-row">
-                        {termOptionsRows}
-                    </div>
+                    <input type="number" min={0} max={360} step={1} value={loanTerm} onChange={e => setLoanTerm(Number(e.target.value))} />
                 </div>
             <div className="field">
                 <div className="field-label">

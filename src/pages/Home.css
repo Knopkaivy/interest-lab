@@ -36,3 +36,10 @@
   font-size: 12px;
   color: var(--accent);
 }
+
+@media (max-width: 480px){
+  .home-grid {
+    display: flex;
+    flex-direction: column;
+  }
+}

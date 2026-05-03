@@ -54,3 +54,24 @@
   border-color: var(--accent);
   color: var(--accent);
 }
+
+@media (max-width: 650px){
+  .app {
+    max-width: 100%;
+    padding: 20px 12px 20px;
+  }
+
+  .header {
+    flex-direction: column;
+  }
+
+  .back-btn {
+    margin-left: 0 auto;
+    width: 100%;
+  }
+
+  .grid {
+    display: flex;
+    flex-direction: column;
+  }
+}
