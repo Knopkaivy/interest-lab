@@ -20,6 +20,7 @@ interface LoanContextType {
     monthlyPayment: number;
     totalPayment: number;
     totalInterest: number;
+    totalFullInterest: number;
     schedule: AmortizationRow[];
 }
 
@@ -68,6 +69,10 @@ export function LoanProvider({children}: {children: React.ReactNode}){
         return totalPayment - loanAmount;
     }, [totalPayment, loanAmount]);
 
+    const totalFullInterest = useMemo(()=>{
+        return (monthlyPayment * loanTerm) - loanAmount;
+    }, [loanAmount, monthlyPayment, loanTerm]);
+
     return (
         <LoanContext.Provider value={{
             loanAmount, setLoanAmount,
@@ -77,6 +82,7 @@ export function LoanProvider({children}: {children: React.ReactNode}){
             monthlyPayment,
             totalPayment,
             totalInterest,
+            totalFullInterest,
             schedule,
         }}>
             {children}

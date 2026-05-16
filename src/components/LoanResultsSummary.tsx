@@ -6,6 +6,7 @@ export default function LoanResultsSummary(){
         monthlyPayment,
         totalPayment,
         totalInterest,
+        totalFullInterest,
         schedule,
         extraPayment,
     } = useLoan();
@@ -29,6 +30,11 @@ export default function LoanResultsSummary(){
                     <div className="stat-val accent">{fmt(monthlyPayment + extraPayment)}</div>
                 </div>
             )}
+            
+            <div className="stat-row">
+                <div className="stat-key">Total payment</div>
+                <div className="stat-val">{fmt(totalPayment)}</div>
+            </div>
 
             <div className="stat-row">
                 <div className="stat-key">Payoff in</div>
@@ -42,10 +48,12 @@ export default function LoanResultsSummary(){
                 <div className="stat-val purple">{fmt(totalInterest)}</div>
             </div>
 
-            <div className="stat-row">
-                <div className="stat-key">Total payment</div>
-                <div className="stat-val">{fmt(totalPayment)}</div>
-            </div>
+            { extraPayment > 0 &&
+                (<div className="stat-row">
+                    <div className="stat-key">Total interest saved</div>
+                    <div className="stat-val accent">{fmt(totalFullInterest - totalInterest)}</div>
+                </div>)
+            }
         </div>
     )
 }
