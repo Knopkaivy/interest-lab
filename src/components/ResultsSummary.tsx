@@ -14,7 +14,7 @@ export default function ResultsSummary(){
                 <div className="stat-val">{fmt(principal)}</div>
             </div>
             <div className="stat-row">
-                <div className="stat-key">Interes earned</div>
+                <div className="stat-key">Interest earned</div>
                 <div className="stat-val purple">{fmt(totalInterest)}</div>
             </div>
             <div className="stat-row">
