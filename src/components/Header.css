@@ -22,9 +22,10 @@
 }
 
 .tagline {
-  font-size: 11px;
+  font-size: 1rem;
+  font-weight: 400;
   color: var(--muted);
-  letter-spacing: 0.12em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 

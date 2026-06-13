@@ -1,12 +1,63 @@
+.loan-input__panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+}
+
+.loan-input__card-label {
+  font-size: .8rem;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+
+.loan-input__field {
+  margin-bottom: 1rem;
+}
+
+.loan-input__field:last-child {
+  margin-bottom: 0;
+}
+
+.loan-input__field-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: .75rem;
+  color: var(--muted);
+  margin-bottom: .5rem;
+}
+
+.loan-input__field-label span {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.loan-input__field-radio{
+  display: flex;
+  gap: .5rem;
+}
+
+.loan-input__field-radio-label{
+  font-size: .75rem;
+  color: var(--muted);
+  padding: .5rem;
+  background-color: var(--bg);
+  border: 1px solid var(--bg);
+  border-radius: 4px;
+}
+
 input[type=number] {
   width: 100%;
   background: var(--bg);
   border: 1px solid var(--border);
-  border-radius: 6px;
+  border-radius: 4px;
   color: var(--text);
   font-family: var(--mono);
-  font-size: 12px;
-  padding: 6px 12px;
+  font-size: .75rem;
+  padding: .5rem .75rem;
   outline: none;
   transition: border-color 0.15s;
 }
@@ -18,3 +69,4 @@ input[type=number]:focus {
 input[type=number]::-webkit-inner-spin-button {
   opacity: 0.3;
 }
+

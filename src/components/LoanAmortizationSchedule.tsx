@@ -10,16 +10,16 @@ export default function LoanAmortizationSchedule(){
         return <tr key={row.month}>
             <td>{row.month}</td>
             <td>{fmt(row.payment)}</td>
-            <td className="td-interest">{fmt(row.interest)}</td>
+            <td className="amortization__td-interest">{fmt(row.interest)}</td>
             <td>{fmt(row.principal)}</td>
-            <td className="td-balance">{fmt(row.balance)}</td>
+            <td className="amortization__td-balance">{fmt(row.balance)}</td>
         </tr>
     })
 
     return(
         <div className="amortization">
-            <div className="card-label">Amortization schedule($)</div>
-            <div className="table-wrap--loan">
+            <h2 className="amortization__card-label">Amortization schedule($)</h2>
+            <div className="amortization__table-wrap--loan">
                 <table>
                     <thead>
                         <tr>

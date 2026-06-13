@@ -18,7 +18,7 @@ export default function Header(){
   return(
         <div className="header">
           <div className="logo">Interest<span>Lab</span></div>
-          <div className="tagline">{getTagline(pathname)}</div>
+          <h1 className="tagline">{getTagline(pathname)}</h1>
           <div className="buttons-container">
             {
                 pathname !== '/' &&

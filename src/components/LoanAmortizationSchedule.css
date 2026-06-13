@@ -2,31 +2,39 @@
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
+  margin-bottom: 2rem;
   padding: 24px;
   grid-column: 1 / -1;
 }
 
-.table-wrap--loan {
-  overflow-x: auto;
-  max-height: 300px;
-  overflow-y: auto;
+.amortization__card-label{
+  font-size: .8rem;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: .5rem;
+}
+
+.amortization__table-wrap--loan {
+  overflow: auto;
   border-radius: 8px;
 }
 
-.table-wrap--loan::-webkit-scrollbar {
+.amortization__table-wrap--loan::-webkit-scrollbar {
   width: 4px;
   height: 4px;
 }
 
-.table-wrap--loan::-webkit-scrollbar-track {
+.amortization__table-wrap--loan::-webkit-scrollbar-track {
   background: transparent;
 }
 
-.table-wrap--loan::-webkit-scrollbar-thumb {
+.amortization__table-wrap--loan::-webkit-scrollbar-thumb {
   background: var(--border);
   border-radius: 2px;
 }
 
-.td-balance {
+.amortization__td-balance {
   color: var(--accent);
 }

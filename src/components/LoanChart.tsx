@@ -32,10 +32,10 @@ const LoanChart = ({ isAnimationActive = true }) =>{
             return (
                 <div className='loan-chart__tooltip'>
                     <p>{`Month: ${label}`}</p>
-                    {
-                        extraPayment ? <p>{`Balance w/extra payment: $${Math.round(Number(payload[0].value)).toLocaleString()}`}</p> : <></>
-                    }
                     <p>{`Balance: $${Math.round(Number(payload[1].value)).toLocaleString()}`}</p>
+                    {
+                        extraPayment ? <p>{`With Extra Payment: $${Math.round(Number(payload[0].value)).toLocaleString()}`}</p> : <></>
+                    }
                 </div>
             )
         }
@@ -61,6 +61,7 @@ const formatCurrency = (number: number) => {
 
     return(
         <div className="loan-chart">
+            <h2 className='loan-chart__card-label'>Payoff Chart</h2>
             <AreaChart
                 style={{ width: '100%', aspectRatio: 3 }}
                 responsive
@@ -81,7 +82,7 @@ const formatCurrency = (number: number) => {
                     <Label className='loan-chart__label' value="Time (Months)" position="insideBottom" offset={-10} />
                 </XAxis>
                 <YAxis tickFormatter={formatCurrency} width="auto" tick={{ fontSize: 11, fill: "#64748b" }}>
-                    <Label className='loan-chart__label' value="Loan ($K)" position="insideLeft" angle={-90}  offset={-15} />
+                    <Label className='loan-chart__label' value="Loan Balance ($K)" position="insideLeft" angle={-90}  offset={-15} />
                 </YAxis>
                 <Tooltip content={CustomTooltip}  />
                 <Area
