@@ -1,4 +1,4 @@
-import {useLoan} from "../context/LoanContext";
+import {useLoan} from "../../context/LoanContext";
 import "./LoanAmortizationSchedule.css";
 
 export default function LoanAmortizationSchedule(){

@@ -3,7 +3,7 @@ import type { TooltipContentProps } from 'recharts';
 import type { NameType, ValueType } from 'recharts/types/component/DefaultTooltipContent';
 import { useMemo } from 'react';
 
-import { useLoan } from "../context/LoanContext";
+import { useLoan } from "../../context/LoanContext";
 import './LoanChart.css';
 import type { AxisTick } from 'recharts/types/util/types';
 
@@ -63,10 +63,9 @@ const formatCurrency = (number: number) => {
         <div className="loan-chart">
             <h2 className='loan-chart__card-label'>Payoff Chart</h2>
             <AreaChart
-                style={{ width: '100%', aspectRatio: 3 }}
                 responsive
                 data={data}
-                margin={{ top: 30, right: 40, left: 30, bottom: 20 }}
+                margin={{ top: 0, right: 10, left: 20, bottom: 15 }}
             >
                 <defs>
                 <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">

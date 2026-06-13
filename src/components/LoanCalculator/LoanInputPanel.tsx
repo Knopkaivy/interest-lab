@@ -1,4 +1,4 @@
-import {useLoan} from "../context/LoanContext";
+import {useLoan} from "../../context/LoanContext";
 import "./LoanInputPanel.css"
 
 export default function LoanInputPanel(){

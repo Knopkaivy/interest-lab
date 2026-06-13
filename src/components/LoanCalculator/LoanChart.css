@@ -10,6 +10,12 @@
     align-items: center;
 }
 
+.loan-chart .recharts-wrapper{
+    aspect-ratio: 3;
+    width: 100%;
+}
+
+
 .loan-chart__card-label{
     align-self: flex-start;
     font-size: .8rem;
@@ -17,7 +23,7 @@
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--muted);
-    margin-bottom: .25rem;
+    margin-bottom: 1rem;
 }
 
 .loan-chart__label{
@@ -29,4 +35,14 @@
 .loan-chart__tooltip{
     font-size: .75rem;
     font-family: var(--mono);
+    background-color: var(--bg);
+    border: 1px solid var(--border);
+    padding: 1rem;
+}
+
+
+@media (max-width: 650px){
+    .loan-chart .recharts-wrapper{
+        aspect-ratio: 1.5;
+    }
 }

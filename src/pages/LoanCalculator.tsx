@@ -1,8 +1,8 @@
 import { LoanProvider } from "../context/LoanContext";
-import LoanInputPanel from "../components/LoanInputPanel";
-import LoanResultsSummary from "../components/LoanResultsSummary";
-import LoanAmortizationSchedule from "../components/LoanAmortizationSchedule";
-import LoanChart from "../components/LoanChart";
+import LoanInputPanel from "../components/LoanCalculator/LoanInputPanel";
+import LoanResultsSummary from "../components/LoanCalculator/LoanResultsSummary";
+import LoanAmortizationSchedule from "../components/LoanCalculator/LoanAmortizationSchedule";
+import LoanChart from "../components/LoanCalculator/LoanChart";
 
 export default function LoanCalculator(){
   return(

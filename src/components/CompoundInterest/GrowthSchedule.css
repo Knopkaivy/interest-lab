@@ -3,13 +3,20 @@
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 24px;
+  margin-bottom: 2rem;
   grid-column: 1 / -1;
 }
 
-.table-wrap {
-  overflow-x: auto;
-  max-height: 340px;
-  overflow-y: auto;
+.growth-schedule__card-label{
+  font-size: .8rem;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: .5rem;
+}
+
+.growth-schedule__table-wrap {
   border-radius: 8px;
 }
 
@@ -61,42 +68,24 @@ td:first-child {
   color: var(--muted);
 }
 
-.td-interest {
+.growth-schedule__td-interest {
   color: var(--accent2);
 }
 
-.td-gain {
+.growth-schedule__td-gain {
   color: var(--accent);
 }
 
-.bar-cell {
-  width: 100px;
-}
-
-.bar-wrap {
-  height: 3px;
-  background: var(--border);
-  border-radius: 2px;
-  overflow: hidden;
-}
-
-.bar-fill {
-  height: 100%;
-  background: var(--accent);
-  border-radius: 2px;
-  transition: width 0.3s ease;
-}
-
-.table-wrap::-webkit-scrollbar {
+.growth-schedule__table-wrap::-webkit-scrollbar {
   width: 4px;
   height: 4px;
 }
 
-.table-wrap::-webkit-scrollbar-track {
+.growth-schedule__table-wrap::-webkit-scrollbar-track {
   background: transparent;
 }
 
-.table-wrap::-webkit-scrollbar-thumb {
+.growth-schedule__table-wrap::-webkit-scrollbar-thumb {
   background: var(--border);
   border-radius: 2px;
 }

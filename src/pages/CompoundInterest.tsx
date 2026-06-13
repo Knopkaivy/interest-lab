@@ -1,7 +1,8 @@
 import { CalcProvider } from "../context/CalcContext";
-import ResultsSummary from "../components/ResultsSummary";
-import InputPanel from "../components/InputPanel";
-import GrowthSchedule from "../components/GrowthSchedule";
+import ResultsSummary from "../components/CompoundInterest/ResultsSummary";
+import InputPanel from "../components/CompoundInterest/InputPanel";
+import GrowthSchedule from "../components/CompoundInterest/GrowthSchedule";
+import CompoundChart from "../components/CompoundInterest/CompoundChart";
 
 export default function CompoundInterest(){
   return(
@@ -10,6 +11,7 @@ export default function CompoundInterest(){
         <div className="grid">
           <InputPanel/>
           <ResultsSummary/>
+          <CompoundChart/>
           <GrowthSchedule/>
         </div>
       </div>
