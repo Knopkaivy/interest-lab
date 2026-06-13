@@ -21,6 +21,7 @@ interface LoanContextType {
     totalPayment: number;
     totalInterest: number;
     totalFullInterest: number;
+    minPaymentSchedule: AmortizationRow[];
     schedule: AmortizationRow[];
 }
 
@@ -37,6 +38,29 @@ export function LoanProvider({children}: {children: React.ReactNode}){
         if(r === 0) return loanAmount/loanTerm;
         return (loanAmount * r * Math.pow(1 + r, loanTerm))/(Math.pow(1 + r, loanTerm) - 1);
     }, [loanAmount, interestRate, loanTerm]);
+
+    const minPaymentSchedule = useMemo(()=>{
+        const r = interestRate/100/12;
+        const rows: AmortizationRow[] = [];
+        let balance = loanAmount;
+        let month = 0;
+        while(balance > 0){
+            month++;
+            const interestCharge = balance * r;
+            const principalCharge = Math.min(monthlyPayment - interestCharge, balance);
+            balance -= principalCharge;
+
+            rows.push({
+                month,
+                payment: principalCharge + interestCharge,
+                principal: principalCharge,
+                interest: interestCharge,
+                balance: Math.max(balance, 0),
+            });
+            if(balance <= 0) break;
+        }
+        return rows;
+    }, [loanAmount, interestRate, monthlyPayment]);
 
     const schedule = useMemo(()=>{
         const r = interestRate/100/12;
@@ -83,6 +107,7 @@ export function LoanProvider({children}: {children: React.ReactNode}){
             totalPayment,
             totalInterest,
             totalFullInterest,
+            minPaymentSchedule,
             schedule,
         }}>
             {children}

@@ -1,0 +1,21 @@
+.loan-chart{
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loan-chart__label{
+    font-size: .75rem;
+    font-family: var(--mono);
+    text-anchor: middle;
+}
+
+.loan-chart__tooltip{
+    font-size: .75rem;
+    font-family: var(--mono);
+}
