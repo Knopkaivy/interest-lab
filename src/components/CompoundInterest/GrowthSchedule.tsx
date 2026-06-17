@@ -13,8 +13,8 @@ export default function GrowthSchedule(){
                     <thead>
                         <tr>
                             <th>Year</th>
-                            <th>Balance</th>
                             <th>Gained this year</th>
+                            <th>EOY Balance</th>
                             <th>Total Interest</th>
                             <th className="growth-schedule__bar-cell"></th>
                         </tr>
@@ -23,8 +23,8 @@ export default function GrowthSchedule(){
                         {schedule.map(row =>(
                             <tr key={row.year}>
                                 <td>{row.year}</td>
-                                <td>{fmt(row.balance)}</td>
                                 <td className="growth-schedule__td-gain">{fmt(row.yearlyGain)}</td>
+                                <td>{fmt(row.balance)}</td>
                                 <td className="growth-schedule__td-interest">{fmt(row.interest)}</td>
                             </tr>
                         ))}

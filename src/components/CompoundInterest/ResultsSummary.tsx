@@ -2,7 +2,7 @@ import { useCalc } from "../../context/CalcContext";
 import "./ResultsSummary.css";
 
 export default function ResultsSummary(){
-    const {principal, years, finalAmount, totalInterest} = useCalc();
+    const {principal, totalMonthlyContributions, years, finalAmount, totalInterest} = useCalc();
     const fmt = (n: number) => "$" + Math.round(n).toLocaleString();
     const multiplier = (finalAmount / principal).toFixed(2);
 
@@ -12,6 +12,10 @@ export default function ResultsSummary(){
             <div className="results-summary__stat-row">
                 <div className="results-summary__stat-key">Starting principal</div>
                 <div className="results-summary__stat-val">{fmt(principal)}</div>
+            </div>
+            <div className="results-summary__stat-row">
+                <div className="results-summary__stat-key">Total Contributions</div>
+                <div className="results-summary__stat-val">{fmt(totalMonthlyContributions)}</div>
             </div>
             <div className="results-summary__stat-row">
                 <div className="results-summary__stat-key">Interest earned</div>

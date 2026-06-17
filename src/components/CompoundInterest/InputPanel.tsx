@@ -2,7 +2,7 @@ import { useCalc } from "../../context/CalcContext";
 import "./InputPanel.css";
 
 export default function InputPanel(){
-    const {principal, setPrincipal, rate, setRate, years, setYears, frequency, setFrequency} = useCalc();
+    const {principal, setPrincipal, monthlyContribution, setMonthlyContribution, rate, setRate, years, setYears, frequency, setFrequency} = useCalc();
 
     return(
         <div className="input-panel">
@@ -12,21 +12,28 @@ export default function InputPanel(){
                     <span>Principal</span>
                     <span>${principal.toLocaleString()}</span>
                 </div>
-                <input id="inputPrincipal" type="range" min={1000} max={10000} step={500} value={principal} onChange={e => setPrincipal(Number(e.target.value))} />
+                <input id="inputPrincipal" type="number" min={1000} max={100000} step={500} value={principal} onChange={e => setPrincipal(Number(e.target.value))} />
+            </div>
+            <div className="input-panel__field">
+                <div className="input-panel__field-label">
+                    <span>Monthly Contribution</span>
+                    <span>${monthlyContribution.toLocaleString()}</span>
+                </div>
+                <input id="inputMonthly" type="number" min={0} max={100000} step={50} value={monthlyContribution} onChange={e => setMonthlyContribution(Number(e.target.value))} />
             </div>
             <div className="input-panel__field">
                 <div className="input-panel__field-label">
                     <span>Annual rate</span>
                     <span>{rate}%</span>
                 </div>
-                <input id="inputRate" type="range" min={.5} max={20} step={.5} value={rate} onChange={e => setRate(Number(e.target.value))} />
+                <input id="inputRate" type="number" min={.5} max={100} step={.5} value={rate} onChange={e => setRate(Number(e.target.value))} />
             </div>
             <div className="input-panel__field">
                 <div className="input-panel__field-label">
                     <span>Time period</span>
                     <span>{years} years</span>
                 </div>
-                <input id="inputYears" type="range" min={1} max={50} step={1} value={years} onChange={e => setYears(Number(e.target.value))} />
+                <input id="inputYears" type="number" min={1} max={100} step={1} value={years} onChange={e => setYears(Number(e.target.value))} />
             </div>
             <div className="input-panel__field">
                 <div className="input-panel__field-label">
