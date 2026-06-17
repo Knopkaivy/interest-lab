@@ -47,8 +47,12 @@ export function LoanProvider({children}: {children: React.ReactNode}){
         while(balance > 0){
             month++;
             const interestCharge = balance * r;
-            const principalCharge = Math.min(monthlyPayment - interestCharge, balance);
+            let principalCharge = Math.min(monthlyPayment - interestCharge, balance);
             balance -= principalCharge;
+            if(month === loanTerm){
+                principalCharge += balance;
+                balance = 0;
+            }
 
             rows.push({
                 month,
@@ -70,8 +74,12 @@ export function LoanProvider({children}: {children: React.ReactNode}){
         while(balance > 0){
             month++;
             const interestCharge = balance * r;
-            const principalCharge = Math.min(monthlyPayment - interestCharge + extraPayment, balance);
+            let principalCharge = Math.min(monthlyPayment - interestCharge + extraPayment, balance);
             balance -= principalCharge;
+            if(month === loanTerm){
+                principalCharge += balance;
+                balance = 0;
+            }
 
             rows.push({
                 month,

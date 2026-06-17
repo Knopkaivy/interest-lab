@@ -1,4 +1,5 @@
 import {useLoan} from "../../context/LoanContext";
+import { exportCsv } from "../../utils/exportCsv";
 import "./LoanAmortizationSchedule.css";
 
 export default function LoanAmortizationSchedule(){
@@ -16,9 +17,24 @@ export default function LoanAmortizationSchedule(){
         </tr>
     })
 
+    
+    const handleExport = () =>{
+        exportCsv(
+            'loan-amortization-schedule',
+            ['Month', 'Payment', 'Interest', 'Principal', 'Balance'],
+            schedule.map(row =>[
+                row.month, row.payment.toFixed(2), row.interest.toFixed(2), row.principal.toFixed(2), row.balance.toFixed(2)
+            ])
+        )
+    }
+
     return(
         <div className="amortization">
-            <h2 className="amortization__card-label">Amortization schedule($)</h2>
+            <div className="amortization__heading-container">
+
+                <h2 className="amortization__card-label">Amortization schedule($)</h2>
+                <button type="button" className="amortization__export-btn" onClick={handleExport}>Export CSV</button>
+            </div>
             <div className="amortization__table-wrap--loan">
                 <table>
                     <thead>

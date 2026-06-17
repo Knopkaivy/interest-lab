@@ -1,19 +1,33 @@
 import { useCalc } from "../../context/CalcContext";
+import { exportCsv } from "../../utils/exportCsv";
 import "./GrowthSchedule.css";
 
 export default function GrowthSchedule(){
     const {schedule} = useCalc();
     const fmt = (n: number) => Math.round(n).toLocaleString();
 
+    const handleExport = () => {
+        exportCsv(
+            'compound-interest-schedule',
+            ['Year', 'Yearly Gain', 'Total Interest', 'End of Year Balance'],
+            schedule.map(row => [
+                row.year, Math.round(row.yearlyGain), Math.round(row.interest), Math.round(row.balance)
+            ])
+        )
+    }
+
     return (
         <div className="growth-schedule">
-            <h2 className="growth-schedule__card-label">Year-by-year growth ($)</h2>
+            <div className="growth-schedule__heading-container">
+                <h2 className="growth-schedule__card-label">Year-by-year growth ($)</h2>
+                <button type="button" className="growth-schedule__export-btn" onClick={handleExport} >Export CSV</button>
+            </div>
             <div className="growth-schedule__table-wrap">
                 <table>
                     <thead>
                         <tr>
                             <th>Year</th>
-                            <th>Year Gain</th>
+                            <th>Yearly Gain</th>
                             <th>Total Interest</th>
                             <th>End Balance</th>
                             <th className="growth-schedule__bar-cell"></th>
