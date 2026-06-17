@@ -69,7 +69,7 @@ export function CalcProvider({children}: {children: React.ReactNode}){
                 yearlyGain: balance - prevBalance - 12 * monthlyContribution,
             }
         });
-    }, [principal, rate, years, frequency]);
+    }, [principal, monthlyContribution, rate, years, frequency]);
 
     return(
         <CalcContext.Provider value={{

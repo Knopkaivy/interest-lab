@@ -72,7 +72,7 @@ td:first-child {
   color: var(--accent2);
 }
 
-.growth-schedule__td-gain {
+.growth-schedule__td-balance {
   color: var(--accent);
 }
 

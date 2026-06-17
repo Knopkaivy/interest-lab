@@ -45,7 +45,7 @@ import './CompoundChart.css'
                     <Label className='compound-chart__label' value="Time (Years)" position="insideBottom" offset={-10} />
                 </XAxis>
                 <YAxis  tickFormatter={formatCurrency} width="auto" tick={{ fontSize: 11, fill: "#64748b" }} >
-                    <Label className='compound-chart__label' value="Loan Balance ($K)" position="insideLeft" angle={-90}  offset={-15} />
+                    <Label className='compound-chart__label' value="Balance ($K)" position="insideLeft" angle={-90}  offset={-15} />
                 </YAxis>
                 <Tooltip cursor={false} content={CustomTooltip} />
                 <Bar dataKey="balance" fill="#7c6af7" activeBar={{ fill: '#ff0080', stroke: '#ff0080' }} radius={[10, 10, 0, 0]} />
